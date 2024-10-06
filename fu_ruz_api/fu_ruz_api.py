@@ -17,8 +17,8 @@ class FuRuzAPI:
     
     def get_group(self, group_name: str):
         response = self.__request(f"api/search?term={group_name}&type=group")
-        print(response[0])
-        return response[0]
+        print(response)
+        return response # TODO: maybe make it so it returns only one, desired group, not all of them (requires filtering)
     
     def get_group_schedule(self, group_name: str, start_date: str = None, end_date: str = None):
         if start_date is None or end_date is None:
@@ -27,4 +27,4 @@ class FuRuzAPI:
         group = self.get_group(group_name)["id"]
         print(f"www.ruz.fa.ru/api/schedule/group/{group}?start={start_date}&finish={end_date}&lng=1")
         response = self.__request(f"api/schedule/group/{group}?start={start_date}&finish={end_date}&lng=1")
-        return response
+        return response # TODO: return less information, remove useless info
