@@ -2,7 +2,7 @@ from datetime import datetime
 import requests
 
 
-class FuRuzAPI:
+class RuzFaAPI:
     HOST = "https://ruz.fa.ru/"
 
     def __current_date(self):
